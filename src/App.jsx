@@ -18,6 +18,15 @@ function App() {
     console.log(date)
   }
 
+  const getPoints = () => {
+    const hour = new Date().getHours()
+    let points = 0
+
+    if(hour <= 14 && hour >= 16){
+      points = points + 10
+    }
+  }
+
   return (
     <div className="App">
       <>
