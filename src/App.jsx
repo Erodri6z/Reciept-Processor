@@ -4,7 +4,9 @@ import './App.css';
 function App() {
 
   const getTime = () => {
-    const time = new Date().getHours()
+    const hour = new Date().getHours()
+    const minute = new Date().getMinutes()
+    const time = `${hour}:${minute}`
     console.log(time)
   }
 
@@ -12,13 +14,14 @@ function App() {
     const day = new Date().getDate()
     const month = new Date().getMonth()+1
     const year = new Date().getFullYear()
-    console.log(month, day, year)
+    const date = `${month}/${day}/${year}`
+    console.log(date)
   }
 
   return (
     <div className="App">
       <>
-      <button onClick={getTime}>time</button>
+      <button onClick={getTime}>Time</button>
       <button onClick={getCurrentDate}>Date</button>
       </>
     </div>
