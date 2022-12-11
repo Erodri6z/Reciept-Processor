@@ -30,9 +30,16 @@ function App() {
 
   const getRetailerPoints = () => {
     const retailer = example.retailer
-
     setPoints(points + retailer.split('').length)
     console.log(points)
+  }
+
+  const isTheDayOdd = () => {
+    const day = new Date().getDate()
+
+    if(day % 2 !== 0) {
+      setPoints(points + 6)
+    }
   }
 
   return (
