@@ -1,7 +1,9 @@
-
+import example from './example/morning-reciept.json'
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
+  const [points, setPoints] = useState(0)
 
   const getTime = () => {
     const hour = new Date().getHours()
@@ -18,18 +20,28 @@ function App() {
     console.log(date)
   }
 
-  const getPoints = () => {
+  const getTimePoints = () => {
     const hour = new Date().getHours()
-    let points = 0
 
     if(hour <= 14 && hour >= 16){
-      points = points + 10
+      setPoints(points + 10)
     }
+  }
+
+  const getRetailerPoints = () => {
+    const retailer = example.retailer
+
+    setPoints(points + retailer.split('').length)
+    console.log(points)
   }
 
   return (
     <div className="App">
       <>
+      <h3>points = {points}</h3>
+      <h1>{example.retailer}</h1>
+      <h2>{example.purchaseTime}</h2>
+      <button onClick={getRetailerPoints}>Retailer</button>
       <button onClick={getTime}>Time</button>
       <button onClick={getCurrentDate}>Date</button>
       </>
