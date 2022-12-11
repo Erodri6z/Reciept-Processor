@@ -53,12 +53,25 @@ function App() {
     }
   }
 
+  const divideByTwentyFive = () => {
+    const price = example.total
+    if (price % 0.25 === 0) {
+      console.log('this is a multiple of 0.25')
+      setPoints(points + 25)
+    } else {
+      console.log('this isnt a dividable by 0.25')
+    }
+  }
+
+  divideByTwentyFive()
+
   return (
     <div className="App">
       <>
       <h3>points = {points}</h3>
       <h1>{example.retailer}</h1>
       <h2>{example.purchaseTime}</h2>
+      <button onClick={divideByTwentyFive}>Is it a multiple of 0.25</button>
       <button onClick={isEvenPrice}>Check Price</button>
       <button onClick={getRetailerPoints}>Retailer</button>
       <button onClick={getTime}>Time</button>
