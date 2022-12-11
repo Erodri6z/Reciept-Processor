@@ -42,6 +42,13 @@ function App() {
     }
   }
 
+  const isEvenPrice = () => {
+    const price = example.total 
+    if (price.slice(-2) === 00 ){
+      setPoints(points + 50)
+    }
+  }
+
   return (
     <div className="App">
       <>
