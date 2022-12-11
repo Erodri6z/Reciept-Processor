@@ -44,8 +44,12 @@ function App() {
 
   const isEvenPrice = () => {
     const price = example.total 
-    if (price.slice(-2) === 00 ){
+    const cents = price.slice(-2)
+    if (cents == parseInt('00')) {
       setPoints(points + 50)
+    }
+    else{
+      console.log("this has cents")
     }
   }
 
@@ -55,6 +59,7 @@ function App() {
       <h3>points = {points}</h3>
       <h1>{example.retailer}</h1>
       <h2>{example.purchaseTime}</h2>
+      <button onClick={isEvenPrice}>Check Price</button>
       <button onClick={getRetailerPoints}>Retailer</button>
       <button onClick={getTime}>Time</button>
       <button onClick={getCurrentDate}>Date</button>
