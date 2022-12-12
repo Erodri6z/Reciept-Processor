@@ -21,8 +21,8 @@ function App() {
   }
 
   const getTimePoints = () => {
-    const hour = example.purchaseTime.slice(0,-2)
-    con
+    const hour = example.purchaseTime.slice(0, -2)
+    console.log(parseInt(hour))
 
     if(parseInt(hour) >= 14 && parseInt(hour) <= 16){
       setPoints(points + 10)
@@ -36,7 +36,8 @@ function App() {
   }
 
   const isTheDayOdd = () => {
-    const day = new Date().getDate()
+    const day = parseInt(example.purchaseDate.slice(5, -2))
+    console.log(day)
 
     if(day % 2 !== 0) {
       setPoints(points + 6)
@@ -83,7 +84,8 @@ function App() {
       <h3>points = {points}</h3>
       <h1>{example.retailer}</h1>
       <h2>{example.purchaseTime}</h2>
-      <button onClick={getTimePoints}>time points</button>
+      <button onClick={isTheDayOdd}>Odd Date</button>
+      <button onClick={getTimePoints}>Time points</button>
       <button onClick={forEveryTwoItems}>How many Pairs</button>
       <button onClick={divideByTwentyFive}>Is it a multiple of 0.25</button>
       <button onClick={isEvenPrice}>Check Price</button>
