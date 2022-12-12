@@ -63,7 +63,15 @@ function App() {
     }
   }
 
-  divideByTwentyFive()
+  const forEveryTwoItems = () => {
+    const numOfItems = example.items.length
+    if (numOfItems % 2 !== 0 ) {
+      console.log('do nothing')
+    } else {
+      setPoints(points + numOfItems / 2 )
+    }
+  }
+
 
   return (
     <div className="App">
@@ -71,6 +79,7 @@ function App() {
       <h3>points = {points}</h3>
       <h1>{example.retailer}</h1>
       <h2>{example.purchaseTime}</h2>
+      <button onClick={forEveryTwoItems}>How many Pairs</button>
       <button onClick={divideByTwentyFive}>Is it a multiple of 0.25</button>
       <button onClick={isEvenPrice}>Check Price</button>
       <button onClick={getRetailerPoints}>Retailer</button>
