@@ -77,6 +77,21 @@ function App() {
     }
   }
 
+  const multipleOfThree = () => {
+    // console.log(charCount)
+    // for (let i = 0; i <= example.items.length; i++ ){
+      example.items.forEach(item => {
+      let charCount = item.shortDescription.length
+      if (charCount % 3 === 0){
+        const point = Math.ceil(item.price * 0.2)
+        console.log(point)
+        setPoints(points + point)
+      } else{
+        console.log('no points')
+      }
+    })
+  }
+
 
   return (
     <div className="App">
@@ -84,6 +99,7 @@ function App() {
       <h3>points = {points}</h3>
       <h1>{example.retailer}</h1>
       <h2>{example.purchaseTime}</h2>
+      <button onClick={multipleOfThree}>Is it a multiple of 3</button>
       <button onClick={isTheDayOdd}>Odd Date</button>
       <button onClick={getTimePoints}>Time points</button>
       <button onClick={forEveryTwoItems}>How many Pairs</button>
