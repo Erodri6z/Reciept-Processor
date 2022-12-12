@@ -66,9 +66,12 @@ function App() {
   const forEveryTwoItems = () => {
     const numOfItems = example.items.length
     if (numOfItems % 2 !== 0 ) {
-      console.log('do nothing')
+      const divided = numOfItems / 2
+      const pairs = divided.toString().slice(0, -1)
+      setPoints(points + parseInt(pairs * 5))
     } else {
-      setPoints(points + numOfItems / 2 )
+      const pairs = numOfItems / 2 
+      setPoints(points + pairs * 5)
     }
   }
 
